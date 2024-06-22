@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="border rounded shadow">
+    {% include "carousel.html" %}
+</div>
+<div class="row my-3 mx-2">
+    <div class="col-sm-12 col-md-3">
+      <div class="list-group" id="list-tab" role="tablist">
+        {% for category in categorys %}
+        <a class="list-group-item list-group-item-action fw-semibold" href={% url "viewByCategory" category.id %} role="tab" aria-controls="list-home">{{category.category}}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-8">
+      <div class="tab-content" id="nav-tabContent">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for book in books %}
+            <div class="col">
+              <div class="card">
+                <p>{{book.image}}</p>
+                <img src="{% static book.image %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{book.name}}</h5>
+                  <p class="card-text">{{book.description|truncatechars:150}}</p>
+                </div>
+
+              <div class="d-flex align-items-center justify-content-between mx-3 pb-2">
+                <p class="fw-bold mb-0">Price: {{book.borrowingPrice}}$</p>
+                <a class="btn btn-primary" href={% url "detailsview" book.id %}>Details</a>
+              </div>
+              </div>
+            </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -18,7 +18,7 @@
         <div class="d-flex align-items-center">
           {% if user.is_authenticated %}
           <p class="text-white mb-0 me-2">Hello {{request.user.first_name}} {{request.user.last_name}} (Balance: {{request.user.account.deposit}}) </p>
-          <a class="btn btn-outline-primary">Profile</a>
+          <a class="btn btn-outline-primary" href={% url "profile" %}>Profile</a>
           <a class="btn btn-outline-warning ms-2" href={% url "logout" %}>Logout</a>
           
           {% else %}
