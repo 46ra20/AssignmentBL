@@ -4,6 +4,10 @@ from .forms import UserCreationForms,AmountForm
 from django.contrib.auth import login,authenticate,logout
 from django.contrib.auth.forms import AuthenticationForm
 
+
+from django.conf import settings
+from django.core.mail import send_mail
+
 # from .models import DepositModels
 
 # Create your views here.
@@ -57,7 +61,11 @@ def DepositMoneyView(request):
             update_fields=['deposit']
         )
 
-        print(type(form.data["amount"]))
-
+        subject = 'Deposit Money in your Account'
+        message = f'Hi {request.user.first_name} {request.user.last_name}, your money deposit successfully. Amount: {amount}$, Total Balance {account.deposit}$'
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [request.user.email]
+        send_mail( subject, message, email_from, recipient_list )
+    
     form = AmountForm()
     return render(request,"Accounts/deposit.html",{"form":form})
