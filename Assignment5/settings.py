@@ -29,8 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'assignmentbl.onrender.com',
-    '0.0.0.0:4000'
-    '127.0.0.1:8000'
+    '127.0.0.1'
 ]
 
 
@@ -150,6 +149,8 @@ MEDIA_ROOT = (
 
 
 MEDIA_URL = '/media/'
+
+CSRF_TRUSTED_ORIGINS = ['https://assignmentbl.onrender.com/','https://*.127.0.0.1']
 
 
 
