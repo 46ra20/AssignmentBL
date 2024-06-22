@@ -83,7 +83,7 @@ commonmark
 configobj
 constantly
 contourpy
-crackmapexec
+# crackmapexec
 crcelk
 crispy-bootstrap5
 cryptography
