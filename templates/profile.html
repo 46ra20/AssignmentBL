@@ -16,7 +16,7 @@
         <tbody>
           {% for book in books %}
           <tr>
-            <th scope="row">{{book.id}}</th>
+            <th scope="row">{{forloop.counter}}</th>
             <td>{{book.book.name}}</td>
             <td>{{book.date}}</td>
             <td>{{book.book.borrowingPrice}}$</td>

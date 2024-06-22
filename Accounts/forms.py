@@ -8,7 +8,7 @@ from .models import DepositModels
 class UserCreationForms(UserCreationForm):
     class Meta:
         model = User
-        fields=['username','first_name','last_name']
+        fields=['username','first_name','last_name','email']
     
     def save(self,commit=True):
         current_user = super().save(commit=False)
