@@ -31,6 +31,9 @@ ALLOWED_HOSTS = [
     "*"
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://assignmentbl.onrender.com/','https://*.127.0.0.1']
+
+
 
 # Application definition
 
@@ -149,7 +152,6 @@ MEDIA_ROOT = (
 
 MEDIA_URL = '/media/'
 
-CSRF_TRUSTED_ORIGINS = ['https://assignmentbl.onrender.com/','https://*.127.0.0.1']
 
 
 
