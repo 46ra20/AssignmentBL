@@ -29,6 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'assignmentbl.onrender.com',
+    '0.0.0.0:4000'
+    '127.0.0.1:8000'
 ]
 
 
