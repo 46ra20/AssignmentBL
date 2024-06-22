@@ -31,7 +31,7 @@ ALLOWED_HOSTS = [
     "*"
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://assignmentbl.onrender.com/','https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://assignmentbl.onrender.com','https://*.127.0.0.1']
 
 
 
