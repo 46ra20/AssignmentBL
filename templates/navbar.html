@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href={% url "homepage" %}>Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href={% url "homepage" %}>Home</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href={% url "deposit" %}>Deposit</a>
+          </li>
+          {% endif %}
+        </ul>
+        <div class="d-flex align-items-center">
+          {% if user.is_authenticated %}
+          <p class="text-white mb-0 me-2">Hello {{request.user.first_name}} {{request.user.last_name}} (Balance: {{request.user.account.deposit}}) </p>
+          <a class="btn btn-outline-primary">Profile</a>
+          <a class="btn btn-outline-warning ms-2" href={% url "logout" %}>Logout</a>
+          
+          {% else %}
+          {% comment %} <p class="text-white m-0 p-0">Balance: taka <p> {% endcomment %}
+          <a class="btn btn-outline-primary" href={% url "singup" %}>SingUp</a>
+          <a class="btn btn-outline-warning ms-2" href={% url "login" %}>Login</a>
+
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </nav>
