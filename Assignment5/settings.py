@@ -159,4 +159,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'rakib2046.md@gmail.com'
-EMAIL_HOST_PASSWORD = 'jbpa zcdi xsaw biez'
+EMAIL_HOST_PASSWORD = 'tsql gkip qzfn wxqv'
