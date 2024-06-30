@@ -30,7 +30,7 @@ ALLOWED_HOSTS = [
     "*"
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://booklibrary-9lei.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://assignmentbl.onrender.com']
 
 
 
