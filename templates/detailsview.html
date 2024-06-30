@@ -12,6 +12,7 @@
       {% if user.is_authenticated %}
         <a href={% url "borrowbook" book.id %} class="btn btn-primary">Borrow Book</a>
         {% endif %}
+        {% if reviews %}
         <div class="border rounded p-4 my-3">
             {% for review in reviews %}
                 <p class="border rounded my-1 p-2 d-inline-block">
@@ -24,14 +25,17 @@
                 </p><br>
             {% endfor %}
         </div>
+        {% endif %}
         {% if user.is_authenticated %}
 
-        <form class="mt-4 border-top" action="" method="POST">
-            {% csrf_token %}
-            {{form|crispy}}
-            <button type="submit" class="btn btn-primary">Review</button>
+        {% if isBorrow %}
+            <form class="mt-4 border-top" action="" method="POST">
+                {% csrf_token %}
+                {{form|crispy}}
+                <button type="submit" class="btn btn-primary">Review</button>
 
-        </form>
+            </form>
+        {% endif %}
       {% endif %}
     </div>
   </div>
