@@ -22,7 +22,7 @@ def ViewDetails(request,id):
     book = BookModel.objects.get(pk=id)
     review = BookReviewModel.objects.filter(book=id)
     isBorrow = False
-    if request.user:
+    if request.user.is_authenticated:
         if BookBorrow.objects.filter(borrower = request.user,book=book):
             isBorrow=True
 
